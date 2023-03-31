@@ -1,0 +1,302 @@
+###########################################################
+### 歡迎使用Beautiful Jekyll！
+### 這個配置文件的設置影響整個網站。在你第一次設置網站時，
+### 你應該仔細查看所有這些設置並進行編輯，
+### 但是在初始設置之後，你通常不需要再回到這個文件。
+###########################################################
+
+###################
+# --- 必要選項 --- #
+##################
+
+# 網站名
+title: Wayne Peng's 
+
+# 你的名子，將會出現在頁角區域（網頁最下方）
+author: Junwen Wayne Peng
+
+######################################
+# --- 導航欄（網頁右上角）中的連結列表 --- #
+######################################
+
+navbar-links:
+  About Me: "aboutme"
+  Resources:
+    - ChatGPT: "https://chat.openai.com/chat"
+    - Beautiful Jekyll: "https://beautifuljekyll.com"
+    - Learn markdown: "https://www.markdowntutorial.com/"
+    - test: "pages/jekyll-intro"
+  Publication: "publication"
+
+################
+# --- Logo --- #
+################
+
+# 顯示在導航欄中的圖片 - 最好使用正方形圖片
+# 如果您不想在導航欄中顯示圖片，請刪除此參數
+avatar: "/assets/img/avatar-icon.png"
+
+# 默認情況下，圖像會被切成圓形。您可以通過設置“round-avatar：false”來禁用此行為。
+round-avatar: true
+
+# 如果您想要在左上角擁有圖像標誌，而不是使用網站標題，
+# 取消註釋（#）並指定以下參數
+#title-img: /path/to/image
+
+
+######################
+# --- 社交媒體鏈接 --- #
+######################
+
+# 選擇您想在頁腳中顯示的社交網絡鏈接。
+# 取消對您想要顯示的鏈接的註釋（#），並將您的信息添加到每個鏈接中。
+social-network-links:
+  email: "junwen.wayne.peng@gmail.com"
+  rss: true  # remove this line if you don't want to show an RSS link at the bottom
+#  facebook: deanattali
+  github: junwenwaynepeng
+#  twitter: daattali
+#  patreon: DeanAttali
+#  youtube: c/daattali
+#  medium: yourname
+#  reddit: yourname
+#  linkedin: daattali
+#  xing: yourname
+#  stackoverflow: "3943160/daattali"
+#  snapchat: deanat78
+  instagram: peng1736
+#  spotify: yourname
+#  telephone: +14159998888
+#  steam: deanat78
+#  twitch: yourname
+#  yelp: yourname
+#  telegram: yourname
+#  calendly: yourname
+#  mastodon: instance.url/@username
+  ORCID: 0000-0001-5769-9519
+  google-scholar: junwen.wayne.peng@gmail.com
+#  discord: invite/invite_code or users/userid 
+#  kaggle: yourname
+#  hackerrank: yourname
+
+# 如果您希望您的網站生成RSS訂閱，請提供一個描述
+# 訂閱鏈接的URL將為https://<您的網站>/feed.xml
+rss-description: Thanks alot
+
+###################
+# --- 一般選項 --- #
+##################
+
+# 選擇要在文章中顯示的社交網絡分享鏈接
+share-links-active:
+  twitter: true
+  facebook: true
+  line: true
+  linkedin: true
+  vk: false
+
+# 如何在頁腳中顯示您的網站鏈接
+# 如果您不想在頁腳中顯示鏈接，請刪除此內容或註解（#）
+url-pretty: "junwenwaynepeng.github.io"
+
+# 摘要詞長 - 將每篇文章的摘要在訂閱頁面上截斷為指定數量的詞
+excerpt_length: 50
+
+# 是否在訂閱頁面中為每篇博客文章顯示摘要
+feed_show_excerpt: true
+
+# 是否在訂閱頁面中在每篇文章預覽下方顯示標籤列表
+feed_show_tags: true
+
+# 在導航欄中添加搜索按鈕
+post_search: true
+
+# 在頁腳中添加一個按鈕，用於編輯當前頁面。僅當您的網站托管在GitHub上時才有效。
+#edit_page_button: true
+
+# Allow sub-menu items (second-level navigation menu items) to be longer than the top-level menu
+# If this setting is off, then long sub-menu words might get cut off
+# See https://github.com/daattali/beautiful-jekyll/issues/765 to understand the issue this setting can solve
+navbar-var-length: false
+
+# 關鍵詞與您的網站相關聯，以便於搜索引擎優化（SEO）的目的
+keywords: "數學網站,台大數學,math,calculus,微積分,微分,積分,如何架設網站,mathjax,在網站上使用latex,markdown,數學"
+
+#######################
+# --- 顏色/背景圖像 --- #
+#######################
+
+# 個性化您網站中的顏色。顏色值可以是任何有效的CSS顏色。
+
+navbar-col: "#EAEAEA"
+navbar-text-col: "#404040"
+navbar-border-col: "#DDDDDD"
+page-col: "#FFFFFF"
+text-col: "#404040"
+link-col: "#008AFF"
+hover-col: "#0085A1"
+footer-col: "#EAEAEA"
+footer-text-col: "#777777"
+footer-link-col: "#404040"
+footer-hover-col: "#0085A1"
+
+# 或者，可以將導航欄、頁腳和頁面背景設置為圖像。
+# 而不是顏色。
+
+#navbar-img: "/assets/img/bgimage.png"
+#footer-img: "/assets/img/bgimage.png"
+#page-img: "/assets/img/bgimage.png"
+
+# 建議為移動瀏覽器設置顏色作為瀏覽器主題。這僅受到少數移動瀏覽器的支持。
+#mobile-theme-col: "#0085A1"
+
+# 為了進行額外的視覺定制，您可以在您網站的每個頁面中包含額外的CSS文件。在這裡列出任何自定義的CSS文件。
+#site-css:
+#  - "/assets/css/custom-styles.css"
+
+# 如果您有應該在每個頁面中包含的常見JavaScript文件，請在此處列出它們
+#site-js:
+#  - "/assets/js/custom-script.js"
+
+###################
+# --- 網頁分析 --- #
+##################
+
+# 填寫您的 Google Analytics gtag.js ID，以使用 gtag 跟踪您的網站，(https://analytics.google.com/)。
+gtag: "G-EL818RR92S"
+
+# 填寫您的 Google Analytics ID，以使用 Google Analytics 跟踪您的網站（較為過時的方法）。
+#google_analytics: "358205790"
+
+# 填寫您的 Cloudflare Analytics beacon token，以使用 Cloudflare Analytics 跟踪您的網站。
+#cloudflare_analytics: ""
+
+# Google Tag Manager ID
+#gtm: ""
+
+# Matomo (aka Piwik) Web statistics
+# 取消註解以下部分以啟用 Matomo。 opt-out 參數控制是否允許用戶選擇退出跟踪。
+#matomo:
+#  site_id: "9"
+#  uri: "demo.wiki.pro"
+#  opt-out: true
+
+###################
+# --- 文章回覆 --- #
+##################
+
+# To use Disqus comments, sign up to https://disqus.com and fill in your Disqus shortname (NOT the userid)
+#disqus: ""
+
+# To use Facebook Comments, create a Facebook app and fill in the Facebook App ID
+#fb_comment_id: ""
+
+# To use CommentBox, sign up for a Project ID on https://commentbox.io
+#commentbox: "" # Project ID, e.g. "5694267682979840-proj"
+
+# To use Utterances comments: (0) uncomment the following section, (1) fill in
+# "repository" (make sure the repository is public), (2) Enable Issues in your repository,
+# (3) Install the Utterances app in your repository https://github.com/apps/utterances
+# See more details about the parameters below at https://utteranc.es/
+#utterances:
+#  repository: # GitHub username/repository eg. "daattali/beautiful-jekyll"
+#  issue-term: title   # Mapping between blog posts and GitHub issues
+#  theme: github-light # Utterances theme
+#  label: blog-comments # Label that will be assigned to GitHub Issues created by Utterances
+
+# To use Staticman comments, uncomment the following section. You may leave the reCaptcha
+# section commented if you aren't using reCaptcha for spam protection. 
+# Using Staticman requires advanced knowledge, please consult 
+# https://github.com/eduardoboucas/staticman/ and https://staticman.net/ for further 
+# instructions. For any support with staticman please direct questions to staticman and 
+# not to BeautifulJekyll.
+#staticman:
+#  repository : # GitHub username/repository eg. "daattali/beautiful-jekyll"
+#  branch     : master # If you're not using `master` branch, then you also need to update the `branch` parameter in `staticman.yml`
+#  endpoint   : # URL of your deployment, with a trailing slash eg. "https://<your-api>/v3/entry/github/"
+#  reCaptcha:   # (optional, set these parameters in `staticman.yml` as well) 
+#    siteKey  : # You need to apply for a site key on Google
+#    secret   : # Encrypt your password by going to https://<your-own-api>/v3/encrypt/<your-site-secret>
+
+# To use giscus comments:
+# (0) Uncomment the following giscus section, (1) Enable Discussions in your GitHub repository, 
+# (2) Install the giscus app in your repository (details at https://giscus.app),
+# (3) Fill in *all* the parameters below 
+# See more details about giscus and each of the following parameters at https://giscus.app
+#giscus:
+#  hostname: giscus.app # Replace with your giscus instance's hostname if self-hosting
+#  repository: # GitHub username/repository eg. "daattali/beautiful-jekyll"
+#  repository-id: # ID of your repository, retrieve this info from https://giscus.app
+#  category: Announcements # Category name of your GitHub Discussion posts
+#  category-id: # ID of your category, retrieve this info from https://giscus.app
+#  mapping: pathname
+#  reactions-enabled: 1
+#  emit-metadata: 0
+#  theme: light
+
+################
+# --- 雜項 --- #
+###############
+
+# Ruby引擎生成部落格的日期格式 (你可以參考此網站根據你喜歡的格式換掉參數)
+date_format: "%B %d, %Y" # 目前格式 March 27, 2023
+
+# Facebook App ID
+#fb_app_id: ""
+
+######################################################
+# --- 你無須更動下方所有參數，但是也可以根據你的需求做調整 --- #
+######################################################
+
+# Output options (more information on Jekyll's site)
+timezone: "Asia/Taipei"    # 設定時區
+# markdown: kramdown    # kramdown是jekyll原生的markdown引擎，但因為github選擇使用CommonMark，所以我們優先採用CommonMarkGhPages，如果你想要換回 kramdown僅須將markdown參數換成kramdown
+markdown: CommonMarkGhPages
+highlighter: rouge
+permalink: /:year-:month-:day-:title/    # permalink是用來設定網址是如何顯示的，不需要更動
+paginate: 5    # 部落格每頁顯現多少文章
+mathjax: true     # 是否啟用mathjax的功能
+
+
+#kramdown:
+#  input: GFM
+commonmark:
+  options: ["UNSAFE", "SMART", "FOOTNOTES"]
+  extensions: ["strikethrough", "autolink", "table", "tagfilter"]
+
+
+# Default YAML values (more information on Jekyll's site)
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: true  # add comments to all blog posts
+      social-share: true # add social media sharing buttons to all blog posts
+  -
+    scope:
+      path: "" # any file that's not a post will be a "page" layout by default
+    values:
+      layout: "page"
+
+# Exclude these files from production site
+exclude:
+  - CHANGELOG.md
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - screenshot.png
+  - docs/
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+
+# 網站基礎是建立在 Beautiful Jekyll / Dean Attali
+# 2fc73a3a967e97599c9763d05e564189
+# 中文化工程由 junwenwaynepeng 彭俊文 台灣大學數學系專任助理教授完成
+
