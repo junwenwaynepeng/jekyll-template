@@ -25,7 +25,7 @@ navbar-links:
     - ChatGPT: "https://chat.openai.com/chat"
     - Beautiful Jekyll: "https://beautifuljekyll.com"
     - Learn markdown: "https://www.markdowntutorial.com/"
-    - test: "pages/jekyll-intro"
+    - Build yourown blog: "pages/jekyll-intro/intro"
   Publication: "publication"
 
 ################
@@ -34,7 +34,7 @@ navbar-links:
 
 # 顯示在導航欄中的圖片 - 最好使用正方形圖片
 # 如果您不想在導航欄中顯示圖片，請刪除此參數
-avatar: "/assets/img/avatar-icon.png"
+avatar: "/assets/img/DatArt.png"
 
 # 默認情況下，圖像會被切成圓形。您可以通過設置“round-avatar：false”來禁用此行為。
 round-avatar: true
@@ -244,9 +244,9 @@ date_format: "%B %d, %Y" # 目前格式 March 27, 2023
 # Facebook App ID
 #fb_app_id: ""
 
-######################################################
+###########################################################
 # --- 你無須更動下方所有參數，但是也可以根據你的需求做調整 --- #
-######################################################
+###########################################################
 
 # Output options (more information on Jekyll's site)
 timezone: "Asia/Taipei"    # 設定時區
@@ -255,8 +255,11 @@ markdown: CommonMarkGhPages
 highlighter: rouge
 permalink: /:year-:month-:day-:title/    # permalink是用來設定網址是如何顯示的，不需要更動
 paginate: 5    # 部落格每頁顯現多少文章
-mathjax: true     # 是否啟用mathjax的功能
-
+#kramdown:
+#  syntax_highlighter: rouge
+#  input: GFM
+#  auto_ids:       true
+#  toc_levels:     1..3
 
 #kramdown:
 #  input: GFM
@@ -296,7 +299,22 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
 
+########################
+# ---  額外套件管理 --- #
+########################
+head-package:
+  -
+    module: "mathjax"
+    file: "package/mathjax.html"
+    src: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+foot-package:
+  -
+    module: "mermaid"
+    file: "package/mermaid.html"
+    src: "https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.esm.min.mjs"
+    
+
 # 網站基礎是建立在 Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189
-# 中文化工程由 junwenwaynepeng 彭俊文 台灣大學數學系專任助理教授完成
+# 中文化工程由 junwenwaynepeng 彭俊文 台灣大學數學系兼任助理教授完成
 

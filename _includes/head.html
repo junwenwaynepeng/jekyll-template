@@ -146,29 +146,21 @@
   {% if page.comments and site.staticman.repository and site.staticman.branch %}
   <link rel="stylesheet" href="{{ '/assets/css/staticman.css' | relative_url }}">
   {% endif %}
-
-  {% if page.head-extra %}
-    {% for file in page.head-extra %}
-      {% include {{ file }} %}
+  
+  {% if page.head-package %}
+    {% for plugin in page.head-package %}
+      {% include {{ plugin.file }} parameter=plugin %}
+    {% endfor %}
+  {% endif %}
+  
+  {% if site.head-package %}
+    {% for plugin in site.head-package %}
+      {% assign local-parameter = page[plugin.module] %}
+      {% include {{ plugin.file }} src=plugin.src local-parameter=local-parameter %}
+      }
     {% endfor %}
   {% endif %}
 
-  {% if site.mathjax %}
-    <script src="{{ '/assets/js/mathjax.js' | relative_url }}" async></script> 
-  {% endif %}
-  
-  {% if page.sagecell %}
-    <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
-    <script>
-    sagecell.makeSagecell({inputLocation: 'div.compute',
-                           evalButtonText: 'Evaluate'});
-    </script>
-    <link rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
-  {% endif %}
-  {% if page.pyscript %}
-    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
-     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
-  {% endif %}
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
   <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function() {

@@ -2,47 +2,65 @@
 layout: base
 ---
 
+{% assign left-toc = site.data.book[page.book] %}
+
 {% include header.html type="page" %}
 
-<div class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}" role="main">
+<div class="container-xxl my-md-4 bd-layout" role="main">
   <div class="row">
-    <div class="{% if page.full-width %} col {% else %} col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 {% endif %}">
 
-      {% if page.before-content %}
-        <div class="before-content">
-          {% for file in page.before-content %}
-            {% include {{ file }} %}
-          {% endfor %}
-        </div>
-      {% endif %}
+    {% if page.before-content %}
+      <div class="before-content">
+        {% for file in page.before-content %}
+          {% include {{ file }} %}
+        {% endfor %}
+      </div>
+    {% endif %}
 
-      {% if page.toc %}
-        <div class="container">  
-          <div class="contents">
-            <article class="markdown-body">
-              {{ content }}
-            </article>
-          </div>   
-          <div class="table-of-contents">
-            <h2>Contents</h2>
-            {% include toc.html html=content %}
-          </div>
-        </div>
-      {% else %}
-        <article class="markdown-body">
-          {{ content }}
-        </article>
-      {% endif %}
-    
-      {% if page.after-content %}
-        <div class="after-content">
-          {% for file in page.after-content %}
-            {% include {{ file }} %}
-          {% endfor %}
-        </div>
-      {% endif %}
+    <!-- Show/hide nav on small screens -->
+    {% if page.left-toc or page.right-toc %}
+      {% include doc-nav.html content=content sanitize=true left-toc=left-toc %}
+    {% endif %}
 
-      {% include comments.html %}
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2 d-none d-md-block">
+          {% if page.left-toc %}
+          <nav class="position-sticky" style="top: 4rem;">
+            <strong class="d-block h6 my-2 pb-2 border-bottom">書目錄</strong>
+            {% include left-toc.html left-toc=left-toc %}
+          </nav>
+          {% endif %}
+        </div>
+
+        <main class="col-md-8 ">
+          <article class="markdown-body">
+            {{ content }}
+          </article>
+        </main>
+
+        <div class="col-md-2 d-none d-md-block">
+          {% if page.right-toc %}
+          <nav class="position-sticky" style="top: 4rem;">
+            <strong class="d-block h6 my-2 pb-2 border-bottom">On this page</strong>
+            {% include right-toc.html html=content sanitize=true %}
+          </nav>
+          {% endif %}
+        </div>
+
+        
+      </div>
     </div>
+
+    
+    {% if page.after-content %}
+      <div class="after-content">
+        {% for file in page.after-content %}
+          {% include {{ file }} %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% include comments.html %}
   </div>
 </div>

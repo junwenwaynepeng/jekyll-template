@@ -41,6 +41,28 @@ layout: base
 
       <article role="main" class="blog-post">
         {{ content }}
+
+        {% if page.data %}
+          {% for data in page.data %}
+            {% assign questionSet = site.data[data.folder][data.file][data.id]  %}
+            <div class="question" id="{{data.folder}}-{{data.file}}-{{ data.id }}">
+              {{ questionSet.question | markdownify }}
+            </div>
+            {% if page.show-answer %}
+              <div class="answer" id="{{data.folder}}-{{data.file}}-{{ data.id }}">
+                {% if page.expandable-answer %}
+                  <details>
+                    <summary>{{ page.expandable-answer-title | default: 'Answer'}}</summary>
+                    {{ questionSet.answer | markdownify }}
+                  </details>
+                {% else %}
+                  {{ questionSet.answer | markdownify }}
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+
       </article>
 
       {% if page.tags.size > 0 %}
@@ -52,6 +74,10 @@ layout: base
         </div>
       {% endif %}
 
+      <!-- Custom JavaScript files set in YAML front matter -->
+      {% for js in page.customjs %}
+        <script async type="text/javascript" src="{{ js }}"></script>
+      {% endfor %}
       {% if page.after-content %}
         <div class="after-content">
           {% for file in page.after-content %}
@@ -76,11 +102,8 @@ layout: base
         </li>
         {% endif %}
       </ul>
+
       {% include comments.html %}
     </div>
   </div>
-  <!-- Custom JavaScript files set in YAML front matter -->
-  {% for js in page.customjs %}
-    <script async type="text/javascript" src="{{ js }}"></script>
-  {% endfor %}
 </div>
